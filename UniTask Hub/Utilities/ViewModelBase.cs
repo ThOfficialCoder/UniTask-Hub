@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 
 namespace UniTask_Hub.Utilities
 {
@@ -12,8 +13,9 @@ namespace UniTask_Hub.Utilities
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void onPropertyChanged([CallerMemberName] string propName = null)
+        protected virtual void onPropertyChanged([CallerMemberName] string propName = null)
         {
+            var handler = PropertyChanged;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
         }
     }
