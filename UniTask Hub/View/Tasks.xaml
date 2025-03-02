@@ -16,7 +16,7 @@
 
         <Border CornerRadius="0,20,20,0">
             <Border.Background>
-                <ImageBrush ImageSource="/Images/customer_page.png"
+                <ImageBrush ImageSource="C:\Users\sehza\Desktop\Portfolio Projects\Startup\UniTask Hub\UniTask Hub\Images\customer_page.png"
                             Stretch="None" />
             </Border.Background>
         </Border>

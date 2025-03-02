@@ -12,13 +12,13 @@
         <vm:HomeVM />
     </UserControl.DataContext>
     <Grid>
-
+        
         <Border CornerRadius="0,20,20,0">
             <Border.Background>
-                <ImageBrush ImageSource="/Images/home_page.png"
+                <ImageBrush ImageSource="C:\Users\sehza\Desktop\Portfolio Projects\Startup\UniTask Hub\UniTask Hub\Images\home_page.png"
                             Stretch="None" />
             </Border.Background>
-        </Border>
+        </Border> 
         
     </Grid>
 </UserControl>

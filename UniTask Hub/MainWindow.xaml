@@ -17,21 +17,25 @@
     </Window.DataContext>
     
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="425*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
         <!-- Window Border -->
 
         <Border Background="#212529"
                 CornerRadius="20"/>
 
         <Grid>
-            
+
             <!-- Base Grid -->
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="228" />
                 <ColumnDefinition Width="622" />
             </Grid.ColumnDefinitions>
-            
+
             <!--Navgation Panel-->
             <Grid HorizontalAlignment="Left"
                   Width="228">
@@ -41,7 +45,7 @@
 
                 <StackPanel Height="400"
                             Width="228">
-                    
+
                     <!--Home-->
 
                     <Menu:Btn Style="{StaticResource BtnStyle}"
@@ -56,7 +60,7 @@
                             <TextBlock Text="Home"
                                        Style="{StaticResource Text_Style}"/>
                         </Grid>
-                        
+
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle}"
@@ -106,18 +110,15 @@
 
                 </StackPanel>
             </Grid>
-
+            
             <Grid Grid.Column="1">
 
                 <ContentControl x:Name="Pages"
                                 Content="{Binding CurrentView}" />
 
-            </Grid>
-            
-        </Grid>
+            </Grid> 
 
-        <Button x:Name="CloseApp"
-                Style="{StaticResource ExitApp}" />
+        </Grid>
 
     </Grid>
 </Window>
