@@ -3,12 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:UniTask_Hub.ViewModel"
+        xmlns:Menu="clr-namespace:UniTask_Hub.Utilities"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="850"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="Transparent">
+    
+    <Window.DataContext>
+        <vm:NavigationVM />
+    </Window.DataContext>
+    
     <Grid>
         
         <!-- Window Border -->
@@ -25,6 +32,92 @@
                 <ColumnDefinition Width="622" />
             </Grid.ColumnDefinitions>
             
+            <!--Navgation Panel-->
+            <Grid HorizontalAlignment="Left"
+                  Width="228">
+
+                <Border Background="#272B2F"
+                        CornerRadius="20,0,0,20" />
+
+                <StackPanel Height="400"
+                            Width="228">
+                    
+                    <!--Home-->
+
+                    <Menu:Btn Style="{StaticResource BtnStyle}"
+                              Command="{Binding HomeCommand}"
+                              IsChecked="True">
+
+                        <Grid>
+
+                            <Image Source="/Images/img_home.png"
+                                   Style="{StaticResource Image_Style}" />
+
+                            <TextBlock Text="Home"
+                                       Style="{StaticResource Text_Style}"/>
+                        </Grid>
+                        
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle}"
+          Command="{Binding TasksCommand}"
+          IsChecked="True">
+
+                        <Grid>
+
+                            <Image Source="/Images/img_customer.png"
+               Style="{StaticResource Image_Style}" />
+
+                            <TextBlock Text="Tasks"
+                   Style="{StaticResource Text_Style}"/>
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle}"
+          Command="{Binding CalendarCommand}"
+          IsChecked="True">
+
+                        <Grid>
+
+                            <Image Source="/Images/order_page.png"
+               Style="{StaticResource Image_Style}" />
+
+                            <TextBlock Text="Calendar"
+                   Style="{StaticResource Text_Style}"/>
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle}"
+          Command="{Binding MessagesCommand}"
+          IsChecked="True">
+
+                        <Grid>
+
+                            <Image Source="/Images/img_setting.png"
+               Style="{StaticResource Image_Style}" />
+
+                            <TextBlock Text="Messages"
+                   Style="{StaticResource Text_Style}"/>
+                        </Grid>
+
+                    </Menu:Btn>
+
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Column="1">
+
+                <ContentControl x:Name="Pages"
+                                Content="{Binding CurrentView}" />
+
+            </Grid>
+            
         </Grid>
+
+        <Button x:Name="CloseApp"
+                Style="{StaticResource ExitApp}" />
+
     </Grid>
 </Window>

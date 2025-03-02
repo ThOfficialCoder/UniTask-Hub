@@ -4,8 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:UniTask_Hub.View"
+             xmlns:vm="clr-namespace:UniTask_Hub.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="622">
+    <UserControl.DataContext>
+        <vm:CalendarVM />
+    </UserControl.DataContext>
+
     <Grid Background="#FFFFFF">
         <CalendarDayButton>
             <Calendar>

@@ -13,7 +13,7 @@ namespace UniTask_Hub.Utilities
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected virtual void onPropertyChanged([CallerMemberName] string propName = null)
+        protected void OnPropertyChanged([CallerMemberName] string propName = null)
         {
             var handler = PropertyChanged;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));

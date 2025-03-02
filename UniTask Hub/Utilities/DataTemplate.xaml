@@ -7,15 +7,15 @@
         <view:Home />
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type vm:Calendar}">
+    <DataTemplate DataType="{x:Type vm:CalendarVM}">
         <view:Calendar />
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type vm:Tasks}">
+    <DataTemplate DataType="{x:Type vm:TasksVM}">
         <view:Tasks />
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type vm:Messages}">
+    <DataTemplate DataType="{x:Type vm:MessagesVM}">
         <view:Messages />
     </DataTemplate>
     

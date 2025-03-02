@@ -8,16 +8,16 @@ using UniTask_Hub.Model;
 
 namespace UniTask_Hub.ViewModel
 {
-    class Messages : Utilities.ViewModelBase
+    class MessagesVM : Utilities.ViewModelBase
     {
         private readonly PageModel _pageModel;
         public NotificationStatus Notifications
         {
             get { return _pageModel.Notifications; }
-            set { _pageModel.Notifications = value; onPropertyChanged(); }
+            set { _pageModel.Notifications = value; OnPropertyChanged(); }
         }
 
-        public Messages()
+        public MessagesVM()
         {
             _pageModel = new PageModel();
             _pageModel.Notifications = NotificationStatus.NotificationAlways;
