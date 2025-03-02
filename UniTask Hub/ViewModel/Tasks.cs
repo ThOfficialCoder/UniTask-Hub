@@ -12,8 +12,8 @@ namespace UniTask_Hub.ViewModel
         private readonly PageModel _pageModel;
         public int TaskID
         {
-            get { return _pageModel.TaskCount; }
-            set { _pageModel.TaskCount = value; onPropertyChanged(); }
+            get { return _pageModel.TaskID; }
+            set { _pageModel.TaskID = value; onPropertyChanged(); }
         }
 
         public string TaskStatus
@@ -25,7 +25,7 @@ namespace UniTask_Hub.ViewModel
         public Tasks()
         {
             _pageModel = new PageModel();
-            TaskID = 12;
+            TaskID = 1254568;
             TaskStatus = "In Progress";
             
         }
