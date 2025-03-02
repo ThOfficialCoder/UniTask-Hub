@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:UniTask_Hub.ViewModel"
+                    xmlns:view="clr-namespace:UniTask_Hub.View">
+
+    <DataTemplate DataType="{x:Type vm:HomeVM}">
+        <view:Home />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:Calendar}">
+        <view:Calendar />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:Tasks}">
+        <view:Tasks />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:Messages}">
+        <view:Messages />
+    </DataTemplate>
+    
+</ResourceDictionary>
