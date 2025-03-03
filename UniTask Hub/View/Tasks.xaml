@@ -7,35 +7,34 @@
              xmlns:vm="clr-namespace:UniTask_Hub.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="622"
-             Style="{StaticResource Page_Style}">
+             Style="{StaticResource Page_Style}"
+             Background="White">
     <UserControl.DataContext>
         <vm:TasksVM />
     </UserControl.DataContext>
-    
+
     <Grid>
 
-        <Border CornerRadius="0,20,20,0">
-            <Border.Background>
-                <ImageBrush ImageSource="C:\Users\sehza\Desktop\Portfolio Projects\Startup\UniTask Hub\UniTask Hub\Images\customer_page.png"
-                            Stretch="None" />
-            </Border.Background>
-        </Border>
+        <!-- Title TextBox -->
+        <TextBox x:Name="TitleTextBox" Text="{Binding TaskTitle}" Width="300" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" />
 
-        <TextBlock Text="Task ID   :"
-                   Foreground="#DBDBDB"
-                   FontSize="12"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   FontFamily="/Fonts/#Rubik Medium"
-                   Margin="80,154,0,0" />
+        <!-- Description TextBox -->
+        <TextBox x:Name="DescriptionTextBox" Text="{Binding TaskDescription}" Width="300" Margin="0,48,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" />
 
-        <TextBlock Text="{Binding TaskID}"
-                   Foreground="#CED565"
-                   FontSize="12"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   FontFamily="/Fonts/#Rubik Medium"
-                   Margin="175,154,0,0" />
+        <!-- Add Task Button -->
+        <Button Content="Add Task" Command="{Binding AddTaskCommand}" Width="100" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,94,0,0"/>
+
+        <ListBox ItemsSource="{Binding Tasks}" Margin="161,338,161,62" Width="300" Height="200">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding title}" FontWeight="Bold" />
+                        <TextBlock Text="{Binding description}" FontStyle="Italic" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
 
     </Grid>
 </UserControl>

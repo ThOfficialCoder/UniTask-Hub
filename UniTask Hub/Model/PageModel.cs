@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace UniTask_Hub.Model
 {
-    class PageModel
+    public class PageModel
     {
+        public string title { get; set; }
+        public string description { get; set; }
+        public string deadline { get; set; }
+        public int status { get; set; }
+        public string created_at { get; set; }
+        public string updated_at { get; set; }
         public int TaskCount { get; set; }
         public int TaskID { get; set; }
         public string TaskStatus { get; set; }

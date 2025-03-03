@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UniTask_Hub.Model;
 
 namespace UniTask_Hub.View
 {
@@ -23,6 +24,7 @@ namespace UniTask_Hub.View
         public Tasks()
         {
             InitializeComponent();
+            this.DataContext = new ViewModel.TasksVM();
         }
     }
 }
