@@ -34,5 +34,13 @@ namespace UniTask_Hub
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
         }
+
+        public static void UpdateTask(PageModel task)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("UPDATE Tasks SET title = @title, description = @description WHERE task_id = @task_id", task);
+            }
+        }
     }
 }

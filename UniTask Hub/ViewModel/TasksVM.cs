@@ -19,11 +19,13 @@ namespace UniTask_Hub.ViewModel
 
         // Command for adding a task
         public ICommand AddTaskCommand { get; }
+        public ICommand EditTaskCommand { get; }
 
         public TasksVM()
         {
             // Define the command and associate it with the AddTask method
             AddTaskCommand = new RelayCommand(AddTask);
+            EditTaskCommand = new RelayCommand(EditTask);
 
             // Load existing tasks (if any)
             LoadTasks();
@@ -51,6 +53,29 @@ namespace UniTask_Hub.ViewModel
                 TaskTitle = string.Empty;
                 TaskDescription = string.Empty;
                 TaskDeadline = string.Empty;  // Reset the deadline if you want
+            }
+        }
+
+        private void EditTask(object parameter)
+        {
+            var taskToEdit = parameter as PageModel;
+
+            if (taskToEdit != null)
+            {
+                var editWindow = new EditTaskWindow(taskToEdit);
+
+                if (editWindow.ShowDialog() == true)
+                {
+                    //taskToEdit.title = editWindow.Task.title;
+                    //taskToEdit.description = editWindow.Task.description;
+
+                    SqliteDataAccess.UpdateTask(taskToEdit);
+
+                    OnPropertyChanged(nameof(Tasks));
+                }
+
+                LoadTasks();
+                OnPropertyChanged(nameof(Tasks));
             }
         }
 

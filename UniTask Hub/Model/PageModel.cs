@@ -16,7 +16,7 @@ namespace UniTask_Hub.Model
         public string created_at { get; set; }
         public string updated_at { get; set; }
         public int TaskCount { get; set; }
-        public int TaskID { get; set; }
+        public int task_id { get; set; }
         public string TaskStatus { get; set; }
         public DateOnly StartDate { get; set; }
         public DateOnly EndDate { get; set; }
